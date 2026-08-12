@@ -1,0 +1,6 @@
+TELEGRAM_APP_VERSION = 0.99
+TELEGRAM_APP_NAME = RedGram
+TELEGRAPH_BUNDLE_ID=com.example.RedGramiNC
+TELEGRAM_APPSTORE_ID = @686449173
+
+#include "Common.xcconfig"

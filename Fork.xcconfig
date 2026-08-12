@@ -1,0 +1,4 @@
+TELEGRAM_APP_NAME = RedGram
+TELEGRAPH_BUNDLE_ID=com.example.RedGramiNC
+
+#include "Common.xcconfig"
