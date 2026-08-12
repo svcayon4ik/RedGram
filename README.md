@@ -1,30 +1,39 @@
-# Twelvium
+# RedGram
+RedGram - Legacy Telegram client for ios 6 - 8 on tele6ram sources
 
-This public source snapshot contains no signing identities, provisioning profiles,
-private API credentials, private user allowlists, or private telemetry endpoints.
-
-# How to build
-1. Clone this repository.
-2. Create a local `config.h` file with your own Telegram API credentials:
-    ```
-    #define SETUP_API_ID(apiId) apiId = 12345;
-    #define SETUP_API_HASH(apiHash) apiHash = @"replace-with-your-own-api-hash";
-    ```
-   Do not commit this file; it is excluded by `.gitignore`.
-   A safe starting template is included as `config.h.example`.
-3. Initialize any required submodules if you publish this snapshot as a Git repository.
-4. Replace the neutral `com.example.Twelvium` bundle identifiers and configure your own Apple signing team, entitlements, merchant ID, provisioning profile and APNs credentials.
-5. Configure a Dropbox app key only if you need the Dropbox picker integration.
-6. Rebuild the omitted Opus, OpenSSL, libbpg and HockeySDK binaries from source (or supply clean equivalents).
-7. Open `Telegram.xcworkspace` in Xcode.
-
-The public settings UI contains no premium/paid-feature gate. Private crash and
-performance upload endpoints are disabled in this public snapshot. You must
-provide your own infrastructure for optional services such as APNs.
-
-See `SECURITY_AND_BUILD.md` for the public-build security boundary and the
-Xcode/iOS 6.1 build procedure.
-
-# Credits
-[Igor igkuzm Semetsov](https://github.com/igkuzm) - Fix outdated client error
-IOvanQ - provided a remote PC for building and testing
+## Features:
+Support for iOS 6.0 and later
+iPhone and iPad layouts
+Optional classic iOS 6 appearance
+Telegram chats, groups and channels
+Media, stickers and voice messages
+Compatibility fixes for the current Telegram infrastructure
+Interface and assets adapted for legacy devices
+Building:
+Requirements:
+OSX 10.7.5 OR Linux (Mint,Debian,Arch) nvm
+XCODE 4.3.6 or THEOS For linux
+Your own Telegram API ID and API hash create on Press Me
+Steps:
+Clone the repository, including its submodules:
+```bash
+   git clone --recursive https://github.com/svcayon4ik/RedGram.git
+   cd RedGram
+   ```
+Add your own Telegram API credentials to `config.h`.
+Open `Telegram.xcworkspace` in Xcode.
+Select the `Telegraph` scheme and configure your bundle identifier and signing settings.
+Build for an iOS device or simulator.
+Do not publish `config.h`, signing certificates, provisioning profiles or other private credentials.
+IPA packaging
+After Xcode produces `Telegram.app`, an unsigned IPA can be packaged with:
+```bash
+mkdir -p Payload
+cp -R /path/to/Telegram.app Payload/
+zip -r RedGram.ipa Payload
+```
+Enjoy
+Please sub to RedGram Telegram channel
+Credits
+Telegram — original Telegram for iOS source code
+Everyone who tests RedGram and reports bugs
